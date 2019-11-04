@@ -13,6 +13,7 @@
 		87FE89512370135C0031D0E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87FE894F2370135C0031D0E5 /* Main.storyboard */; };
 		87FE89532370135E0031D0E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87FE89522370135E0031D0E5 /* Assets.xcassets */; };
 		87FE89562370135E0031D0E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87FE89542370135E0031D0E5 /* LaunchScreen.storyboard */; };
+		87FE895E2370230E0031D0E5 /* Content.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87FE895D2370230E0031D0E5 /* Content.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		87FE89522370135E0031D0E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87FE89552370135E0031D0E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		87FE89572370135E0031D0E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87FE895D2370230E0031D0E5 /* Content.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Content.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				87FE894B2370135C0031D0E5 /* SceneDelegate.swift */,
 				87FE894D2370135C0031D0E5 /* ViewController.swift */,
 				87FE894F2370135C0031D0E5 /* Main.storyboard */,
+				87FE895D2370230E0031D0E5 /* Content.storyboard */,
 				87FE89522370135E0031D0E5 /* Assets.xcassets */,
 				87FE89542370135E0031D0E5 /* LaunchScreen.storyboard */,
 				87FE89572370135E0031D0E5 /* Info.plist */,
@@ -125,6 +128,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87FE895E2370230E0031D0E5 /* Content.storyboard in Resources */,
 				87FE89562370135E0031D0E5 /* LaunchScreen.storyboard in Resources */,
 				87FE89532370135E0031D0E5 /* Assets.xcassets in Resources */,
 				87FE89512370135C0031D0E5 /* Main.storyboard in Resources */,

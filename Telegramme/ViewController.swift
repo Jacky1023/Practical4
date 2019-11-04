@@ -9,7 +9,11 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var usrNameFld: UITextField!
+    
+    @IBOutlet weak var pwdFld: UITextField!
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
