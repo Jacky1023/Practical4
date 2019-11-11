@@ -26,5 +26,7 @@ class AddContactViewController:UIViewController{
     @IBAction func createBtn(_ sender: Any) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         print(String(appDelegate.contactList.count))
+     
     }
+            
 }

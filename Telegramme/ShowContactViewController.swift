@@ -17,6 +17,8 @@ class ShowContactViewController : UITableViewController{
         super.viewDidLoad()
         
         self.tableView.reloadData() //refresh data
+        
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     override func viewDidAppear(_ animated: Bool){
@@ -37,10 +39,27 @@ class ShowContactViewController : UITableViewController{
         
         let contact = appDelegate.contactList[indexPath.row]
         cell.textLabel!.text = "\(contact.firstName) \(contact.lastName)"
-        cell.detailTextLabel!.text = "\(contact.mobileNo)"
+        //cell.detailTextLabel!.text = "\(contact.mobileNo)"
         
         return cell
     }
+    
+    /*Exercise 2*/
+    //delete the row selected
+     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        var contactList:[Contact]=[]
+        print(contactList.count)
+
+        print(indexPath.row)
+       if editingStyle == .delete{
+           contactList.remove(at: indexPath.row)
+           tableView.beginUpdates()
+           tableView.deleteRows(at: [indexPath], with: .automatic)
+           tableView.endUpdates()
+       }
+
+   }
+
     
     
 }
