@@ -10,7 +10,7 @@
 		87AE061A2372A7610016DEA9 /* AddContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AE06192372A7610016DEA9 /* AddContactViewController.swift */; };
 		87AE061C2372AA040016DEA9 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AE061B2372AA040016DEA9 /* Contact.swift */; };
 		87AE06222372ADF50016DEA9 /* ShowContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AE06212372ADF50016DEA9 /* ShowContactViewController.swift */; };
-		87FE894A2370135C0031D0E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FE89492370135C0031D0E5 /* AppDelegate.swift */; };
+		87BAFCFA23790D310018CA98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FE89492370135C0031D0E5 /* AppDelegate.swift */; };
 		87FE894C2370135C0031D0E5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FE894B2370135C0031D0E5 /* SceneDelegate.swift */; };
 		87FE894E2370135C0031D0E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FE894D2370135C0031D0E5 /* ViewController.swift */; };
 		87FE89512370135C0031D0E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87FE894F2370135C0031D0E5 /* Main.storyboard */; };
@@ -151,10 +151,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87BAFCFA23790D310018CA98 /* AppDelegate.swift in Sources */,
 				87FE894E2370135C0031D0E5 /* ViewController.swift in Sources */,
 				87AE061A2372A7610016DEA9 /* AddContactViewController.swift in Sources */,
 				87AE061C2372AA040016DEA9 /* Contact.swift in Sources */,
-				87FE894A2370135C0031D0E5 /* AppDelegate.swift in Sources */,
 				87AE06222372ADF50016DEA9 /* ShowContactViewController.swift in Sources */,
 				87FE894C2370135C0031D0E5 /* SceneDelegate.swift in Sources */,
 			);

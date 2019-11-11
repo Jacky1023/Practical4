@@ -7,7 +7,8 @@
 //
 
 import Foundation
-class Contact{
+class Contact {
+    
     var firstName:String
     var lastName:String
     var mobileNo:String
