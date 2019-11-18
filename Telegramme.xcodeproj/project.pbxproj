@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		87A34E1723829124003B7E59 /* Telegramme.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 87A34E1523829124003B7E59 /* Telegramme.xcdatamodeld */; };
+		87A34E1923829784003B7E59 /* ContactController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A34E1823829784003B7E59 /* ContactController.swift */; };
 		87AE061A2372A7610016DEA9 /* AddContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AE06192372A7610016DEA9 /* AddContactViewController.swift */; };
 		87AE061C2372AA040016DEA9 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AE061B2372AA040016DEA9 /* Contact.swift */; };
 		87AE06222372ADF50016DEA9 /* ShowContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AE06212372ADF50016DEA9 /* ShowContactViewController.swift */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		87A34E1623829124003B7E59 /* Telegramme.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Telegramme.xcdatamodel; sourceTree = "<group>"; };
+		87A34E1823829784003B7E59 /* ContactController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactController.swift; sourceTree = "<group>"; };
 		87AE06192372A7610016DEA9 /* AddContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactViewController.swift; sourceTree = "<group>"; };
 		87AE061B2372AA040016DEA9 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		87AE06212372ADF50016DEA9 /* ShowContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowContactViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +79,8 @@
 				87FE89572370135E0031D0E5 /* Info.plist */,
 				87AE061B2372AA040016DEA9 /* Contact.swift */,
 				87AE06212372ADF50016DEA9 /* ShowContactViewController.swift */,
+				87A34E1523829124003B7E59 /* Telegramme.xcdatamodeld */,
+				87A34E1823829784003B7E59 /* ContactController.swift */,
 			);
 			path = Telegramme;
 			sourceTree = "<group>";
@@ -153,9 +159,11 @@
 			files = (
 				87BAFCFA23790D310018CA98 /* AppDelegate.swift in Sources */,
 				87FE894E2370135C0031D0E5 /* ViewController.swift in Sources */,
+				87A34E1923829784003B7E59 /* ContactController.swift in Sources */,
 				87AE061A2372A7610016DEA9 /* AddContactViewController.swift in Sources */,
 				87AE061C2372AA040016DEA9 /* Contact.swift in Sources */,
 				87AE06222372ADF50016DEA9 /* ShowContactViewController.swift in Sources */,
+				87A34E1723829124003B7E59 /* Telegramme.xcdatamodeld in Sources */,
 				87FE894C2370135C0031D0E5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,6 +360,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		87A34E1523829124003B7E59 /* Telegramme.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				87A34E1623829124003B7E59 /* Telegramme.xcdatamodel */,
+			);
+			currentVersion = 87A34E1623829124003B7E59 /* Telegramme.xcdatamodel */;
+			path = Telegramme.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 87FE893E2370135C0031D0E5 /* Project object */;
 }
