@@ -34,12 +34,13 @@ class ContactController{
     }
     
     //Retrieve all contacts from core data
-    func retrieveAlContact()->[Contact]
+    func retrieveAllContact()->[Contact]
     {
        var contact:[NSManagedObject]=[]
        let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
        let context = appDelegate.persistentContainer.viewContext
-        
+       var contactList:[Contact]=[]
+
        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CDContact")
        do{
             contact = try context.fetch(fetchRequest)
@@ -48,19 +49,40 @@ class ContactController{
                 let firstname = c.value(forKeyPath: "firstname") as? String
                 let lastname = c.value(forKeyPath: "lastname") as? String
                 let mobileno = c.value(forKeyPath: "mobileno") as? String
-                print("\(firstname!) \(lastname!), \(mobileno!)")
+                contactList.append( Contact(firstname: firstname!, lastname: lastname!, mobileno: mobileno!))
+                //contactlist.append(c as! Contact)
             }
         } catch let error as NSError {
         print("Could not save. \(error), \(error.userInfo)")
         }
-        return contact
+        return contactList
     }
     
     //Update current contact with new contact
     //fetch data based on mobileno
     func updateCOntact(mobileno:String, newContact:Contact)
     {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "CDContact")
+        fetchRequest.predicate = NSPredicate(format:"lastName = %@","Doe-2")
         
+        do {
+            let result = try managedContext.fetch(fetchRequest)
+            let obj = result[0] as! NSManagedObject
+            
+            obj.setValue("New John", forKeyPath:  "firstName")
+            obj.setValue("Doe", forKeyPath: "lastName")
+            obj.setValue("New John", forKeyPath: "mobile")
+
+            do{
+                try managedContext.save()
+            } catch let error as NSError{
+                print("Update error: \(error), \(error.userInfo)")
+            }
+        }catch{
+            print("error")
+        }
     }
     
     //Delete Contact

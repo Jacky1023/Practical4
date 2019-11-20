@@ -39,7 +39,7 @@ class ShowContactViewController : UITableViewController{
         
         let contact = appDelegate.contactList[indexPath.row]
         cell.textLabel!.text = "\(contact.firstName) \(contact.lastName)"
-        //cell.detailTextLabel!.text = "\(contact.mobileNo)"
+        cell.detailTextLabel!.text = "\(contact.mobileNo)"
         
         return cell
     }
@@ -47,15 +47,11 @@ class ShowContactViewController : UITableViewController{
     /*Exercise 2*/
     //delete the row selected
      override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        var contactList:[Contact]=[]
-        print(contactList.count)
-
+        print(appDelegate.contactList.count)
         print(indexPath.row)
        if editingStyle == .delete{
-           contactList.remove(at: indexPath.row)
-           tableView.beginUpdates()
+           appDelegate.contactList.remove(at: indexPath.row)
            tableView.deleteRows(at: [indexPath], with: .automatic)
-           tableView.endUpdates()
        }
 
    }
