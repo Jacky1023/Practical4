@@ -24,18 +24,11 @@ class AddContactViewController:UIViewController{
         mobileFld.text=""
     }
     @IBAction func createBtn(_ sender: Any) {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.contactList.append(Contact(firstname: firstNameFld.text ?? "", lastname: lastNameFld.text ?? "", mobileno: mobileFld.text ?? "")
-//        let context = appDelegate.contactList
-//        var record = NSEntityDescription.insertNewObject(forEntityName: CDContact, into: context) as NSManagedObject
-//        record.setValue("1",forKey:"data")
-//        do {
-//            try context.save()
-//        } catch {
-//            print("error")
-//        }
-//        print(record)
-//        print(String(appDelegate.contactList.count))
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        appDelegate.contactList.append(Contact(firstname: firstNameFld.text ?? "", lastname: lastNameFld.text ?? "", mobileno: mobileFld.text ?? "")
+        let contactController = UIApplication.shared.delegate as! ContactController
+        contactController.AddContact(newContact:Contact( firstname: firstNameFld.text ?? "", lastname: lastNameFld.text ?? "", mobileno: mobileFld.text ?? "")
+
      
     )}
             
