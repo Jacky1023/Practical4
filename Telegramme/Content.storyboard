@@ -77,11 +77,11 @@
             </objects>
             <point key="canvasLocation" x="-691" y="-305"/>
         </scene>
-        <!--Item 1-->
+        <!--Add-->
         <scene sceneID="R0X-se-TVU">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ODn-db-Fjw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="mDe-0n-m9k"/>
+                    <tabBarItem key="tabBarItem" title="Add" id="mDe-0n-m9k"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5Y8-Kz-fxG">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -96,11 +96,11 @@
             </objects>
             <point key="canvasLocation" x="227.536231884058" y="-629.46428571428567"/>
         </scene>
-        <!--Item 2-->
+        <!--Show-->
         <scene sceneID="yTR-OG-Jat">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qFX-kv-pK8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 2" id="ISL-jn-pdH"/>
+                    <tabBarItem key="tabBarItem" title="Show" id="ISL-jn-pdH"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3QB-oi-hr8">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

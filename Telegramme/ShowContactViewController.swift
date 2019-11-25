@@ -8,8 +8,10 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class ShowContactViewController : UITableViewController{
+   var contactList:[Contact]=[]
     
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
     
@@ -22,6 +24,8 @@ class ShowContactViewController : UITableViewController{
     }
     
     override func viewDidAppear(_ animated: Bool){
+        let contactController = ContactController()
+        contactList = contactController.retrieveAllContact()
         self.tableView.reloadData()
     }
     
@@ -30,14 +34,14 @@ class ShowContactViewController : UITableViewController{
     }
     
     override func tableView(_ tableView:UITableView, numberOfRowsInSection section:Int)->Int{
-        return appDelegate.contactList.count
+        return contactList.count
     }
     
     override func tableView(_ tableView:UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell{
         
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "ContactCell", for: indexPath)
         
-        let contact = appDelegate.contactList[indexPath.row]
+        let contact = contactList[indexPath.row]
         cell.textLabel!.text = "\(contact.firstName) \(contact.lastName)"
         cell.detailTextLabel!.text = "\(contact.mobileNo)"
         
@@ -50,7 +54,7 @@ class ShowContactViewController : UITableViewController{
         print(appDelegate.contactList.count)
         print(indexPath.row)
        if editingStyle == .delete{
-           appDelegate.contactList.remove(at: indexPath.row)
+           contactList.remove(at: indexPath.row)
            tableView.deleteRows(at: [indexPath], with: .automatic)
        }
 

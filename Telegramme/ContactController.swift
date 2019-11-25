@@ -22,9 +22,9 @@ class ContactController{
         let entity = NSEntityDescription.entity(forEntityName:"CDContact", in: context)!
         
         let CDContact = NSManagedObject(entity: entity, insertInto: context)
-        CDContact.setValue("Melfred",forKeyPath: "firstname")
-        CDContact.setValue("Sawyer",forKeyPath: "lastname")
-        CDContact.setValue("91111222",forKeyPath: "mobileno")
+        CDContact.setValue(newContact.firstName,forKeyPath: "firstname")
+        CDContact.setValue(newContact.lastName,forKeyPath: "lastname")
+        CDContact.setValue(newContact.mobileNo,forKeyPath: "mobileno")
         
         do{
             try context.save()
@@ -60,7 +60,7 @@ class ContactController{
     
     //Update current contact with new contact
     //fetch data based on mobileno
-    func updateCOntact(mobileno:String, newContact:Contact)
+    func updateContact(mobileno:String, newContact:Contact)
     {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
         let managedContext = appDelegate.persistentContainer.viewContext

@@ -26,10 +26,12 @@ class AddContactViewController:UIViewController{
     @IBAction func createBtn(_ sender: Any) {
 //        let appDelegate = UIApplication.shared.delegate as! AppDelegate
 //        appDelegate.contactList.append(Contact(firstname: firstNameFld.text ?? "", lastname: lastNameFld.text ?? "", mobileno: mobileFld.text ?? "")
-        let contactController = UIApplication.shared.delegate as! ContactController
-        contactController.AddContact(newContact:Contact( firstname: firstNameFld.text ?? "", lastname: lastNameFld.text ?? "", mobileno: mobileFld.text ?? "")
-
+        let contactController = ContactController()
+        contactController.AddContact(newContact:Contact( firstname: firstNameFld.text ?? "", lastname: lastNameFld.text ?? "", mobileno: mobileFld.text ?? ""))
+            
+        let alertView = UIAlertController(title: "Confirm", message: "New contact was added", preferredStyle: UIAlertController.Style.alert)
+        self.present(alertView,animated: true, completion: nil)
      
-    )}
+    }
             
 }
