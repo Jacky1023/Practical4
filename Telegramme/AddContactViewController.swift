@@ -26,11 +26,33 @@ class AddContactViewController:UIViewController{
     @IBAction func createBtn(_ sender: Any) {
 //        let appDelegate = UIApplication.shared.delegate as! AppDelegate
 //        appDelegate.contactList.append(Contact(firstname: firstNameFld.text ?? "", lastname: lastNameFld.text ?? "", mobileno: mobileFld.text ?? "")
+        
         let contactController = ContactController()
         contactController.AddContact(newContact:Contact( firstname: firstNameFld.text ?? "", lastname: lastNameFld.text ?? "", mobileno: mobileFld.text ?? ""))
+        
+//        let friendController = FriendController()
+//               contactController.AddContact(newContact:Contact( firstname: firstNameFld.text ?? "", lastname: lastNameFld.text ?? "", mobileno: mobileFld.text ?? ""))
+        if(firstNameFld.text=="" && lastNameFld.text=="" && mobileFld.text=="")
+        {
+            let alertView = UIAlertController(title: "failed", message: "failed to add new contact", preferredStyle: UIAlertController.Style.alert)
+                       self.present(alertView,animated: true, completion: nil)
+            //set timer to dismiss alertview
+            let when = DispatchTime.now() + 3
+            DispatchQueue.main.asyncAfter(deadline: when){
+                alertView.dismiss(animated: true, completion: nil);
+            }
+        }
+        else
+        {
+            let alertView = UIAlertController(title: "Success", message: "New contact was added", preferredStyle: UIAlertController.Style.alert)
+            self.present(alertView,animated: true, completion: nil)
             
-        let alertView = UIAlertController(title: "Confirm", message: "New contact was added", preferredStyle: UIAlertController.Style.alert)
-        self.present(alertView,animated: true, completion: nil)
+            let when = DispatchTime.now() + 3
+                       DispatchQueue.main.asyncAfter(deadline: when){
+                           alertView.dismiss(animated: true, completion: nil);
+                       }
+        }
+        
      
     }
             

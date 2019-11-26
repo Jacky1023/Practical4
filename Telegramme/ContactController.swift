@@ -71,9 +71,9 @@ class ContactController{
             let result = try managedContext.fetch(fetchRequest)
             let obj = result[0] as! NSManagedObject
             
-            obj.setValue("New John", forKeyPath:  "firstName")
-            obj.setValue("Doe", forKeyPath: "lastName")
-            obj.setValue("New John", forKeyPath: "mobile")
+            obj.setValue(newContact.firstName, forKeyPath:  "firstName")
+            obj.setValue(newContact.lastName, forKeyPath: "lastName")
+            obj.setValue(newContact.mobileNo, forKeyPath: "mobile")
 
             do{
                 try managedContext.save()
@@ -89,7 +89,24 @@ class ContactController{
     //fetch data based on mobileno
     func deleteContact(mobileno:String)
     {
-        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "CDContact")
+        fetchRequest.predicate = NSPredicate(format:"mobileno = %@","Doe-2")
+        let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
+        let managedContext = appDelegate.persistentContainer.viewContext
+        do{
+            let result = try managedContext.fetch(fetchRequest)
+            let obj = result[0] as! NSManagedObject
+            managedContext.delete(obj)
+            
+            do{
+                try managedContext.save()
+            }catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+            }
+        }catch{
+            print("error")
+        }
+
     }
 }
 

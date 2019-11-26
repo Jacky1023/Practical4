@@ -22,6 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            Contact(firstname:"Blue",lastname:"Berry",mobileno:"98765432"),
 //            Contact(firstname:"Claud",lastname:"Cool",mobileno:"90000001")
 //        ]
+        
+        
+        
         return true
     }
    
