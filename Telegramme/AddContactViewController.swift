@@ -30,8 +30,6 @@ class AddContactViewController:UIViewController{
         let contactController = ContactController()
         contactController.AddContact(newContact:Contact( firstname: firstNameFld.text ?? "", lastname: lastNameFld.text ?? "", mobileno: mobileFld.text ?? ""))
         
-//        let friendController = FriendController()
-//               contactController.AddContact(newContact:Contact( firstname: firstNameFld.text ?? "", lastname: lastNameFld.text ?? "", mobileno: mobileFld.text ?? ""))
         if(firstNameFld.text=="" && lastNameFld.text=="" && mobileFld.text=="")
         {
             let alertView = UIAlertController(title: "failed", message: "failed to add new contact", preferredStyle: UIAlertController.Style.alert)

@@ -65,7 +65,7 @@ class ContactController{
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "CDContact")
-        fetchRequest.predicate = NSPredicate(format:"lastName = %@","Doe-2")
+        fetchRequest.predicate = NSPredicate(format:"mobileno = %@",mobileno)
         
         do {
             let result = try managedContext.fetch(fetchRequest)
@@ -90,7 +90,7 @@ class ContactController{
     func deleteContact(mobileno:String)
     {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "CDContact")
-        fetchRequest.predicate = NSPredicate(format:"mobileno = %@","Doe-2")
+        fetchRequest.predicate = NSPredicate(format:"mobileno = %@",mobileno)
         let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
         let managedContext = appDelegate.persistentContainer.viewContext
         do{

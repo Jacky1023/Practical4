@@ -29,35 +29,38 @@ class FriendController {
         }
     }
 
-    func AddMessageTofriend(friend:Friend, message:Message)
-    {
-        let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-               
-        let entity = NSEntityDescription.entity(forEntityName:"CDMessage", in: context)!
-               
-        let CDMessage = NSManagedObject(entity: entity, insertInto: context)
-        CDMessage.setValue(message.Date,forKeyPath: "date")
-        CDMessage.setValue(message.isSender,forKeyPath: "isSender")
-        CDMessage.setValue(message.Text,forKeyPath: "text")
+//    //func AddMessageTofriend(friend:Friend, message:Message)
+//    func AddMessageTofriend(friend:Contact, message:Message)
+//    {
+//        let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
+//        let context = appDelegate.persistentContainer.viewContext
+//               
+//        let entity = NSEntityDescription.entity(forEntityName:"CDMessage", in: context)!
+//               
+//        let CDMessage = NSManagedObject(entity: entity, insertInto: context)
+//        CDMessage.setValue(message.Date,forKeyPath: "date")
+//        CDMessage.setValue(message.isSender,forKeyPath: "isSender")
+//        CDMessage.setValue(message.Text,forKeyPath: "text")
+//        
+//
+//        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CDFriend")
+//        fetchRequest.predicate = NSPredicate(format: "name = %@", friend.lastName)
+//
+//        do{
+//            let test = try context.fetch(fetchRequest)
+//            print("Added for")
+//            let CDFriend = test[0]
+//            //Relationship
+//            CDMessage.setValue(CDFriend, forKey: "")
+//            try context.save()
+//        }
+//        catch{
+//            print(error)
+//        }
+//    }
 
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CDFriend")
-        fetchRequest.predicate = NSPredicate(format: "name = %@", friend.Name)
-
-        do{
-            let test = try context.fetch(fetchRequest)
-            let CDFriend = test[0]
-            //Relationship
-            CDMessage.setValue(CDFriend, forKey: "")
-            try context.save()
-        }
-        catch{
-            print(error)
-        }
-    }
-
-    func retrieveMessagebyfriend(friend:Friend)->[Message]
-    {
+//    func retrieveMessagebyfriend(friend:Friend)->[Message]
+//    {
 //        var messageList:[Message] = []
 //
 //        let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
@@ -71,15 +74,16 @@ class FriendController {
 //                let d = l.value(forKey: "date") as! Date
 //                let i = l.value(forKey: "isSender") as! Bool
 //                let t = l.value(forKey: "text") as! String
-//                print("\(d) \(i) \(t)")
-//                messageList.append(Message(date: d, issender: i, text: t))
+//                //print("\(d) \(i) \(t)")
+//                messageList.append(Message(date: <#T##Date#>, issender: <#T##Bool#>, text: <#T##String#>))
 //            }
 //        }
 //        catch
 //        {
 //            print(error)
 //        }
-        
-    }
+//        return messageList
+//
+//    }
 
 }

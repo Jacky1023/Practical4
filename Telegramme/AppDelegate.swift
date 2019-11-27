@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            Contact(firstname:"Claud",lastname:"Cool",mobileno:"90000001")
 //        ]
         
-        
+//        print(NSSearchPathForDirectoriesInDomains(.applicationSupportDirectory, .userDomainMask, true).last as! String)
         
         return true
     }
