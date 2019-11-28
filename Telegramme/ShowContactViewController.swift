@@ -11,7 +11,9 @@ import UIKit
 import CoreData
 
 class ShowContactViewController : UITableViewController{
-   var contactList:[Contact]=[]
+    var contactList:[Contact]=[]
+    var contactController:ContactController = ContactController()
+
     
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
     
@@ -21,6 +23,9 @@ class ShowContactViewController : UITableViewController{
         self.tableView.reloadData() //refresh data
         
         self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+
+
     }
     
     override func viewDidAppear(_ animated: Bool){
@@ -54,17 +59,17 @@ class ShowContactViewController : UITableViewController{
      override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         print(contactList.count)
         print(indexPath.row)
-       if editingStyle == .delete{
+        if editingStyle == UITableViewCell.EditingStyle.delete{
            contactList.remove(at: indexPath.row)
-           tableView.deleteRows(at: [indexPath], with: .automatic)
+            tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.middle)
 
        }
-      
-        
-        
-
 
    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        appDelegate.rowValue = indexPath.row
+    }
+
 
     
     

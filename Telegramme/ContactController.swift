@@ -62,26 +62,25 @@ class ContactController{
     //fetch data based on mobileno
     func updateContact(mobileno:String, newContact:Contact)
     {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+        let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
         let managedContext = appDelegate.persistentContainer.viewContext
+        
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "CDContact")
         fetchRequest.predicate = NSPredicate(format:"mobileno = %@",mobileno)
         
         do {
-            let result = try managedContext.fetch(fetchRequest)
+            let result = try! managedContext.fetch(fetchRequest)
             let obj = result[0] as! NSManagedObject
             
-            obj.setValue(newContact.firstName, forKeyPath:  "firstName")
-            obj.setValue(newContact.lastName, forKeyPath: "lastName")
-            obj.setValue(newContact.mobileNo, forKeyPath: "mobile")
+            obj.setValue(newContact.firstName, forKeyPath:  "firstname")
+            obj.setValue(newContact.lastName, forKeyPath: "lastname")
+            obj.setValue(newContact.mobileNo, forKeyPath: "mobileno")
 
             do{
                 try managedContext.save()
             } catch let error as NSError{
-                print("Update error: \(error), \(error.userInfo)")
+                print("Could not update: \(error), \(error.userInfo)")
             }
-        }catch{
-            print("error")
         }
     }
     
@@ -89,22 +88,24 @@ class ContactController{
     //fetch data based on mobileno
     func deleteContact(mobileno:String)
     {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "CDContact")
-        fetchRequest.predicate = NSPredicate(format:"mobileno = %@",mobileno)
         let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
         let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "CDContact")
+        fetchRequest.predicate = NSPredicate(format:"mobileno = %@",mobileno)
+        
         do{
             let result = try managedContext.fetch(fetchRequest)
-            let obj = result[0] as! NSManagedObject
-            managedContext.delete(obj)
+            let objdelete = result[0] as! NSManagedObject
+            managedContext.delete(objdelete)
             
             do{
                 try managedContext.save()
             }catch let error as NSError {
-            print("Could not save. \(error), \(error.userInfo)")
+            print("Could not delete. \(error), \(error.userInfo)")
             }
-        }catch{
-            print("error")
+        }catch let error as NSError{
+            print("Could not find using mobileno. \(error), \(error.userInfo)")
         }
 
     }

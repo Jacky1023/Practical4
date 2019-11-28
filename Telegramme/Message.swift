@@ -9,14 +9,14 @@
 import Foundation
 class Message{
     
-//    var messageDate:Date
-//    var messageIsSender:Bool
-//    var messageText:String
-//    
-//    init(messageDate:Date, messageIsSender:Bool, messageText:String){
-//        self.messageDate = messageDate
-//        messageIsSender = messageDate
-//        messageText = messageDate
-//    }
+    var Date:Date
+    var IsSender:Bool
+    var Text:String
+    
+    init(date:Date, issender:Bool, text:String){
+        Date = date
+        IsSender = issender
+        Text = text
+    }
     
 }

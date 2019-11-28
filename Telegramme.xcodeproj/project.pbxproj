@@ -14,6 +14,7 @@
 		87AE06222372ADF50016DEA9 /* ShowContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AE06212372ADF50016DEA9 /* ShowContactViewController.swift */; };
 		87B0B64F238BCEE30077070B /* FriendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B0B64E238BCEE30077070B /* FriendController.swift */; };
 		87BAFCFA23790D310018CA98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FE89492370135C0031D0E5 /* AppDelegate.swift */; };
+		87C54089238F5E79003983BB /* EditContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C54088238F5E79003983BB /* EditContactViewController.swift */; };
 		87E0AB7E238CEA9B0050AAD2 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E0AB7D238CEA9B0050AAD2 /* Friend.swift */; };
 		87E0AB80238CEB930050AAD2 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E0AB7F238CEB930050AAD2 /* Message.swift */; };
 		87FE894C2370135C0031D0E5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FE894B2370135C0031D0E5 /* SceneDelegate.swift */; };
@@ -31,6 +32,7 @@
 		87AE061B2372AA040016DEA9 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		87AE06212372ADF50016DEA9 /* ShowContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowContactViewController.swift; sourceTree = "<group>"; };
 		87B0B64E238BCEE30077070B /* FriendController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendController.swift; sourceTree = "<group>"; };
+		87C54088238F5E79003983BB /* EditContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditContactViewController.swift; sourceTree = "<group>"; };
 		87E0AB7D238CEA9B0050AAD2 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		87E0AB7F238CEB930050AAD2 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		87FE89462370135C0031D0E5 /* Telegramme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Telegramme.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,6 +92,7 @@
 				87B0B64E238BCEE30077070B /* FriendController.swift */,
 				87E0AB7D238CEA9B0050AAD2 /* Friend.swift */,
 				87E0AB7F238CEB930050AAD2 /* Message.swift */,
+				87C54088238F5E79003983BB /* EditContactViewController.swift */,
 			);
 			path = Telegramme;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 				87E0AB7E238CEA9B0050AAD2 /* Friend.swift in Sources */,
 				87B0B64F238BCEE30077070B /* FriendController.swift in Sources */,
 				87FE894C2370135C0031D0E5 /* SceneDelegate.swift in Sources */,
+				87C54089238F5E79003983BB /* EditContactViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
