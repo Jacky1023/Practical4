@@ -66,8 +66,20 @@ class ShowContactViewController : UITableViewController{
        }
 
    }
+    
+//    contact[0] = John Tan
+//    contact[1] = Mary Lim
+//    contact[2] = James Bond
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        appDelegate.rowValue = indexPath.row
+        //appDelegate.rowValue = indexPath.row
+//        let friendController:FriendController = FriendController()
+//        let d = Date()
+//        
+//        let message1:Message = Message(date: d, issender: true, text: "Message 1 from John")
+//        let message2:Message = Message(date: d, issender: true, text: "Message 2 from John")
+//        friendController.AddMessageTofriend(friend: contactList[0], message: message1)
+
     }
 
 

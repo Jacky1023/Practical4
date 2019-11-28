@@ -29,61 +29,62 @@ class FriendController {
         }
     }
 
-//    //func AddMessageTofriend(friend:Friend, message:Message)
-//    func AddMessageTofriend(friend:Contact, message:Message)
-//    {
-//        let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
-//        let context = appDelegate.persistentContainer.viewContext
-//               
-//        let entity = NSEntityDescription.entity(forEntityName:"CDMessage", in: context)!
-//               
-//        let CDMessage = NSManagedObject(entity: entity, insertInto: context)
-//        CDMessage.setValue(message.Date,forKeyPath: "date")
-//        CDMessage.setValue(message.isSender,forKeyPath: "isSender")
-//        CDMessage.setValue(message.Text,forKeyPath: "text")
-//        
-//
-//        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CDFriend")
-//        fetchRequest.predicate = NSPredicate(format: "name = %@", friend.lastName)
-//
-//        do{
-//            let test = try context.fetch(fetchRequest)
-//            print("Added for")
-//            let CDFriend = test[0]
-//            //Relationship
-//            CDMessage.setValue(CDFriend, forKey: "")
-//            try context.save()
-//        }
-//        catch{
-//            print(error)
-//        }
-//    }
+    //func AddMessageTofriend(friend:Contact, message:Message)
+    func AddMessageTofriend(friend:Friend, message:Message)
+    {
+        let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        //Get message table
+        let Messageentity = NSEntityDescription.entity(forEntityName:"CDMessage", in: context)!
+        //create new row with iuts value in message entity
+        let CDMessage = NSManagedObject(entity: Messageentity, insertInto: context)
+        CDMessage.setValue(message.Date,forKeyPath: "date")
+        CDMessage.setValue(message.IsSender,forKeyPath: "isSender")
+        CDMessage.setValue(message.Text,forKeyPath: "text")
+        
+        //Fetch friend table to fetch a row
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CDFriend")
+        //fetch a row in friend table where name is queal to friend.Name
+        fetchRequest.predicate = NSPredicate(format: "name = %@", friend.Name)
 
-//    func retrieveMessagebyfriend(friend:Friend)->[Message]
-//    {
-//        var messageList:[Message] = []
-//
-//        let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
-//        let context = appDelegate.persistentContainer.viewContext
-//        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CDFriend")
-//
-//        fetchRequest.predicate = NSPredicate(format: "name = %@", friend.Name)
-//        do{
-//            let list:[NSManagedObject] = try context.fetch(fetchRequest)
-//            for l in list{                      //as! = force downcasting
-//                let d = l.value(forKey: "date") as! Date
-//                let i = l.value(forKey: "isSender") as! Bool
-//                let t = l.value(forKey: "text") as! String
-//                //print("\(d) \(i) \(t)")
-//                messageList.append(Message(date: <#T##Date#>, issender: <#T##Bool#>, text: <#T##String#>))
-//            }
-//        }
-//        catch
-//        {
-//            print(error)
-//        }
-//        return messageList
-//
-//    }
+        do{
+            //fetch the list of results in the query
+            let test = try context.fetch(fetchRequest)
+            //get the first reuslt of the list
+            let CDFriend = test[0]
+            //create a new friend object in relation to the message entity
+            CDMessage.setValue(CDFriend, forKey: "friend")
+            try context.save()
+        }
+        catch{
+            print(error)
+        }
+    }
+
+    func retrieveMessagebyfriend(friend:Friend)->[Message]
+    {
+        var messageList:[Message] = []
+        let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        //get Message table
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CDFriend")
+        // get message table based on friend
+        fetchRequest.predicate = NSPredicate(format: "friend.name = %@", friend.Name)
+        do{
+            //get rows in message table
+            let message = try context.fetch(fetchRequest)
+            for m in message{                      //as! = force downcasting
+                let d = m.value(forKey: "date") as? Date
+                let i = m.value(forKey: "isSender") as? Bool
+                let t = m.value(forKey: "text") as? String
+                messageList.append(Message(date:d!, issender: i!, text: t!))
+            }
+        }
+        catch let error as NSError{
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+        return messageList
+
+    }
 
 }
