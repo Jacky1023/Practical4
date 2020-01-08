@@ -47,6 +47,22 @@ class MapViewController:UIViewController{
             print("\(lat),\(long)")
             
             self.centermapOnLocation(location: location)
+            
+            let annotation = MKPointAnnotation()
+
+            annotation.coordinate = location.coordinate
+            annotation.title = "Ngee Ann Polytechnic"
+            annotation.subtitle = "School of ICT"
+            self.map.addAnnotation(annotation)
+            print("gg")
+                       
+            let geoCoder = CLGeocoder()
+            geoCoder.geocodeAddressString("535 Clementi Road Singapore 599489", completionHandler: {p,e in
+            let lat = String(format: "Lat: %3.12f",p![0].location!.coordinate.latitude)
+            let long = String(format: "Long: %3.12f",p![0].location!.coordinate.longitude)
+                           
+            print("\(lat), \(long)")
+            })
         }
     }
 }
