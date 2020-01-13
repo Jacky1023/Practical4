@@ -14,7 +14,7 @@ class LocationDelegate : NSObject, CLLocationManagerDelegate
 {
     var locationCallBack: ((CLLocation) ->())? = nil
     
-    func locationManager(_manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
+    func locationManager(_ _manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
     {
         guard let currentLocation = locations.last else{return}
         locationCallBack?(currentLocation)
